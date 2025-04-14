@@ -41,8 +41,8 @@ export function Controls() {
 
   const controls = [
     {
-      id: "initial-position",
-      title: "Posições iniciais",
+      id: "position",
+      title: "Mostrar posição",
       active: showPosition,
       Icon: (
         <MapPin
@@ -56,7 +56,7 @@ export function Controls() {
     },
     {
       id: "numbers",
-      title: "Mostrar posição",
+      title: "Mostrar números",
       active: showNumbers,
       Icon: (
         <Hash
