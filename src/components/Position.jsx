@@ -17,7 +17,7 @@ export function Position({ color, label, position, from, to }) {
         <div className="relative">
           <div
             className={classnames({
-              "absolute z-0 flex h-14 w-14 -translate-y-[20%] items-center justify-center transition": true,
+              "absolute z-0 flex h-14 w-14 items-center justify-center transition": true,
               "opacity-0": !showNumbers,
             })}
           >

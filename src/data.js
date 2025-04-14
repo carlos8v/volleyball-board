@@ -221,7 +221,7 @@ const positions_5x1_serve_1 = [
     },
     to: {
       x: 80,
-      y: 115,
+      y: 110,
     },
     position: 1,
   },
@@ -233,7 +233,7 @@ const positions_5x1_serve_1 = [
     },
     to: {
       x: 50,
-      y: 80,
+      y: 75,
     },
     position: 6,
   },
@@ -245,7 +245,7 @@ const positions_5x1_serve_1 = [
     },
     to: {
       x: 20,
-      y: 60,
+      y: 67,
     },
     position: 5,
   },
@@ -306,7 +306,7 @@ const positions_5x1_serve_2 = [
     },
     to: {
       x: 80,
-      y: 115,
+      y: 110,
     },
     position: 1,
   },
@@ -330,7 +330,7 @@ const positions_5x1_serve_2 = [
     },
     to: {
       x: 50,
-      y: 80,
+      y: 75,
     },
     position: 5,
   },
@@ -391,7 +391,7 @@ const positions_5x1_serve_3 = [
     },
     to: {
       x: 80,
-      y: 115,
+      y: 110,
     },
     position: 1,
   },
@@ -403,7 +403,7 @@ const positions_5x1_serve_3 = [
     },
     to: {
       x: 50,
-      y: 67,
+      y: 75,
     },
     position: 6,
   },
@@ -415,7 +415,7 @@ const positions_5x1_serve_3 = [
     },
     to: {
       x: 40,
-      y: 50,
+      y: 60,
     },
     position: 5,
   },
@@ -476,7 +476,7 @@ const positions_5x1_serve_4 = [
     },
     to: {
       x: 80,
-      y: 115,
+      y: 110,
     },
     position: 1,
   },
@@ -561,7 +561,7 @@ const positions_5x1_serve_5 = [
     },
     to: {
       x: 80,
-      y: 115,
+      y: 110,
     },
     position: 1,
   },
@@ -646,7 +646,7 @@ const positions_5x1_serve_6 = [
     },
     to: {
       x: 80,
-      y: 115,
+      y: 110,
     },
     position: 1,
   },
@@ -669,8 +669,8 @@ const positions_5x1_serve_6 = [
       y: initial_positions_6[2].y,
     },
     to: {
-      x: 20,
-      y: 67,
+      x: 40,
+      y: 60,
     },
     position: 5,
   },
@@ -829,8 +829,8 @@ const positions_5x1_receive_2 = [
       y: initial_positions_2[1].y,
     },
     to: {
-      x: 70,
-      y: 30,
+      x: 65,
+      y: 25,
     },
     position: 6,
   },
@@ -865,7 +865,7 @@ const positions_5x1_receive_2 = [
       y: initial_positions_2[4].y,
     },
     to: {
-      x: 80,
+      x: 75,
       y: 15,
     },
     position: 3,
@@ -1241,4 +1241,7 @@ export const positions_5x1_receive = [
   positions_5x1_receive_6,
 ];
 
-export const currentPositions = positions_5x1_serve;
+export const positions = {
+  receive: positions_5x1_receive,
+  serve: positions_5x1_serve,
+};

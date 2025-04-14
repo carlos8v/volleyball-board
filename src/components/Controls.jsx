@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { MapPin, Hash } from "react-feather";
+import { MapPin, Hash, Shield } from "react-feather";
 
 import { useControls } from "../hooks/useControls";
 
@@ -12,8 +12,8 @@ export function Controls() {
     toggleShowPosition,
     showNumbers,
     toggleShowNumbers,
-    nextRotation,
-    previousRotation,
+    defensivePosition,
+    toggleDefensivePosition,
   } = useControls();
 
   useEffect(() => {
@@ -24,20 +24,16 @@ export function Controls() {
       },
       {
         key: "2",
+        cb: () => toggleDefensivePosition(),
+      },
+      {
+        key: "3",
         cb: () => toggleShowNumbers(),
-      },
-      {
-        key: "left",
-        cb: () => previousRotation(),
-      },
-      {
-        key: "right",
-        cb: () => nextRotation(),
       },
     ]);
 
     return cleanup;
-  }, [toggleShowPosition, toggleShowNumbers, nextRotation, previousRotation]);
+  }, [toggleShowPosition, toggleDefensivePosition, toggleShowNumbers]);
 
   const controls = [
     {
@@ -53,6 +49,20 @@ export function Controls() {
         />
       ),
       cb: () => toggleShowPosition(),
+    },
+    {
+      id: "defensive",
+      title: "Posição de defesa",
+      active: defensivePosition,
+      Icon: (
+        <Shield
+          className={classnames({
+            "h-6 w-6 transition": true,
+            "text-white": defensivePosition,
+          })}
+        />
+      ),
+      cb: () => toggleDefensivePosition(),
     },
     {
       id: "numbers",
@@ -79,7 +89,7 @@ export function Controls() {
           title={title}
           onClick={() => cb()}
           className={classnames({
-            "relative cursor-pointer rounded-lg p-3 transition": true,
+            "relative cursor-pointer rounded-md p-3 transition": true,
             "hover:bg-zinc-200": !active,
             "bg-indigo-900": active,
           })}
