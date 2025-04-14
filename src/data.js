@@ -732,7 +732,7 @@ const positions_5x1_receive_1 = [
       y: initial_positions_1[0].y,
     },
     to: {
-      x: 85,
+      x: 90,
       y: 80,
     },
     position: 1,
@@ -926,7 +926,7 @@ const positions_5x1_receive_3 = [
       y: initial_positions_3[2].y,
     },
     to: {
-      x: 50,
+      x: 45,
       y: 15,
     },
     position: 5,
