@@ -1,8 +1,8 @@
 const colors = {
   yellow: "bg-radial-[at_25%_25%] from-yellow-300 to-yellow-600 to-75%",
-  red: "bg-radial-[at_25%_25%] from-red-600 to-red-900 to-75%",
-  green: "bg-radial-[at_25%_25%] from-green-400 to-green-700 to-75%",
-  blue: "bg-radial-[at_25%_25%] from-indigo-500 to-indigo-900 to-75%",
+  red: "bg-radial-[at_25%_25%] from-red-600 to-rose-900 to-75%",
+  green: "bg-radial-[at_25%_25%] from-green-500 to-emerald-700 to-75%",
+  blue: "bg-radial-[at_25%_25%] from-sky-700 to-indigo-900 to-75%",
 };
 
 const players = {
