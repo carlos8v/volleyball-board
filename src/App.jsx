@@ -24,8 +24,7 @@ function App() {
           ))}
       </div>
       <Controls />
-      {!isPlaying ? <PositionControls /> : null}
-      <AnimationControls />
+      {isPlaying ? <AnimationControls /> : <PositionControls />}
     </main>
   );
 }

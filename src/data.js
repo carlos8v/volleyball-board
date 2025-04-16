@@ -349,23 +349,27 @@ const positions_5x1_serve_3 = {
       ...players.central1,
       from: initial_positions[3],
       to: {
-        x: 50,
+        x: 40,
         y: 5,
       },
+      animations: [
+        {
+          x: 40,
+          y: 5,
+        },
+        {
+          x: 50,
+          y: 5,
+        },
+      ],
       position: 4,
     },
     {
       ...players.outside2,
       from: initial_positions[4],
-      to: {
-        x: 60,
-        y: 20,
-      },
+      to: initial_positions[4],
       animations: [
-        {
-          x: 60,
-          y: 20,
-        },
+        initial_positions[4],
         {
           x: 20,
           y: 5,

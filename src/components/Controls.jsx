@@ -27,25 +27,26 @@ export function Controls() {
   useEffect(() => {
     const cleanup = bindEvents([
       {
-        key: "1",
+        key: "space",
         cb: () => playAnimations(),
       },
       {
+        key: "1",
+        cb: () => !isPlaying && toggleShowPosition(),
+      },
+      {
         key: "2",
-        cb: () => toggleShowPosition(),
+        cb: () => !isPlaying && toggleDefensivePosition(),
       },
       {
         key: "3",
-        cb: () => toggleDefensivePosition(),
-      },
-      {
-        key: "4",
         cb: () => toggleShowNumbers(),
       },
     ]);
 
     return cleanup;
   }, [
+    isPlaying,
     playAnimations,
     toggleShowPosition,
     toggleDefensivePosition,
@@ -55,7 +56,7 @@ export function Controls() {
   const controls = [
     {
       id: "position",
-      key: 2,
+      keyMap: 1,
       active: showPosition,
       disabled: isPlaying,
       Icon: (
@@ -67,11 +68,11 @@ export function Controls() {
         />
       ),
       wrapper: PositionHelper,
-      cb: () => toggleShowPosition(),
+      onClick: toggleShowPosition,
     },
     {
       id: "defensive",
-      key: 3,
+      keyMap: 2,
       disabled: isPlaying,
       active: defensivePosition,
       Icon: (
@@ -83,11 +84,11 @@ export function Controls() {
         />
       ),
       wrapper: DefenceHelper,
-      cb: () => toggleDefensivePosition(),
+      onClick: toggleDefensivePosition,
     },
     {
       id: "numbers",
-      key: 2,
+      keyMap: 3,
       active: showNumbers,
       disabled: false,
       Icon: (
@@ -99,7 +100,7 @@ export function Controls() {
         />
       ),
       wrapper: NumberHelper,
-      cb: () => toggleShowNumbers(),
+      onClick: toggleShowNumbers,
     },
   ];
 
@@ -128,50 +129,16 @@ export function Controls() {
             })}
           />
         )}
-        <span
-          className={classnames({
-            "absolute right-1 bottom-0 text-sm font-thin transition select-none": true,
-            "text-white": isPlaying,
-            "text-zinc-600": !isPlaying,
-          })}
-        >
-          1
-        </span>
       </button>
       <span className="my-2 w-px bg-zinc-200"></span>
-      {controls.map(({ id, key, active, disabled, Icon, cb, wrapper }, idx) => {
-        const Wrapper = wrapper;
-
-        return (
-          <Wrapper
-            key={id}
-            active={helperIdx === idx}
-            onNext={() => setHelperIdx(idx + 1)}
-          >
-            <button
-              type="button"
-              onClick={() => cb()}
-              disabled={disabled}
-              className={classnames({
-                "relative cursor-pointer rounded-md p-3 transition disabled:cursor-not-allowed disabled:bg-zinc-200": true,
-                "hover:bg-zinc-200": !active,
-                "bg-indigo-900": active,
-              })}
-            >
-              {Icon}
-              <span
-                className={classnames({
-                  "absolute right-1 bottom-0 text-sm font-thin transition select-none": true,
-                  "text-white": active && !disabled,
-                  "text-zinc-600": !active,
-                })}
-              >
-                {key}
-              </span>
-            </button>
-          </Wrapper>
-        );
-      })}
+      {controls.map((props, index) => (
+        <ControlButton
+          key={props.id}
+          {...props}
+          wrapperActive={helperIdx === index}
+          onWrapperClick={() => setHelperIdx(index + 1)}
+        />
+      ))}
       <span className="my-2 w-px bg-zinc-200"></span>
       <button
         className="relative cursor-pointer rounded-md p-3 transition hover:bg-zinc-200"
@@ -180,5 +147,44 @@ export function Controls() {
         <HelpCircle className="h-6 w-6" />
       </button>
     </div>
+  );
+}
+
+function ControlButton({
+  active,
+  disabled,
+  keyMap,
+  Icon,
+  onClick,
+  wrapper,
+  wrapperActive,
+  onWrapperClick,
+}) {
+  const Wrapper = wrapper;
+
+  return (
+    <Wrapper active={wrapperActive} onNext={onWrapperClick}>
+      <button
+        type="button"
+        onClick={onClick}
+        disabled={disabled}
+        className={classnames({
+          "relative cursor-pointer rounded-md p-3 transition disabled:cursor-not-allowed disabled:bg-zinc-200": true,
+          "hover:bg-zinc-200": !active,
+          "bg-indigo-900": active,
+        })}
+      >
+        {Icon}
+        <span
+          className={classnames({
+            "absolute right-1 bottom-0 text-sm font-thin transition select-none": true,
+            "text-white": active && !disabled,
+            "text-zinc-600": !active,
+          })}
+        >
+          {keyMap}
+        </span>
+      </button>
+    </Wrapper>
   );
 }
