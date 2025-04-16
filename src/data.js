@@ -113,7 +113,7 @@ const positions_5x1_serve_1 = {
           x: 50,
           y: 75,
         },
-        initial_positions[1],
+        initial_positions[2],
       ],
       position: 6,
     },
@@ -121,9 +121,16 @@ const positions_5x1_serve_1 = {
       ...players.outside2,
       from: initial_positions[2],
       to: {
-        x: 20,
-        y: 67,
+        x: 40,
+        y: 60,
       },
+      animations: [
+        {
+          x: 40,
+          y: 60,
+        },
+        initial_positions[1],
+      ],
       position: 5,
     },
     {
@@ -176,7 +183,7 @@ const positions_5x1_serve_1 = {
   ],
 };
 const positions_5x1_serve_2 = {
-  keyframes: 0,
+  keyframes: 2,
   positions: [
     {
       ...players.central1,
@@ -196,6 +203,13 @@ const positions_5x1_serve_2 = {
         x: 80,
         y: 110,
       },
+      animations: [
+        {
+          x: 80,
+          y: 110,
+        },
+        initial_positions[1],
+      ],
       position: 1,
     },
     {
@@ -205,15 +219,19 @@ const positions_5x1_serve_2 = {
         x: 76,
         y: 67,
       },
+      animations: [
+        {
+          x: 76,
+          y: 67,
+        },
+        initial_positions[0],
+      ],
       position: 6,
     },
     {
       ...players.libero,
       from: initial_positions[2],
-      to: {
-        x: 50,
-        y: 75,
-      },
+      to: initial_positions[2],
       position: 5,
     },
     {
@@ -223,6 +241,16 @@ const positions_5x1_serve_2 = {
         x: 20,
         y: 15,
       },
+      animations: [
+        {
+          x: 20,
+          y: 15,
+        },
+        {
+          x: 20,
+          y: 5,
+        },
+      ],
       position: 4,
     },
     {
@@ -232,6 +260,16 @@ const positions_5x1_serve_2 = {
         x: 40,
         y: 20,
       },
+      animations: [
+        {
+          x: 40,
+          y: 20,
+        },
+        {
+          x: 80,
+          y: 5,
+        },
+      ],
       position: 3,
     },
     {
@@ -246,7 +284,7 @@ const positions_5x1_serve_2 = {
   ],
 };
 const positions_5x1_serve_3 = {
-  keyframes: 0,
+  keyframes: 2,
   positions: [
     {
       ...players.libero,
@@ -266,6 +304,13 @@ const positions_5x1_serve_3 = {
         x: 80,
         y: 110,
       },
+      animations: [
+        {
+          x: 80,
+          y: 110,
+        },
+        initial_positions[2],
+      ],
       position: 1,
     },
     {
@@ -275,6 +320,13 @@ const positions_5x1_serve_3 = {
         x: 50,
         y: 75,
       },
+      animations: [
+        {
+          x: 50,
+          y: 75,
+        },
+        initial_positions[1],
+      ],
       position: 6,
     },
     {
@@ -285,6 +337,13 @@ const positions_5x1_serve_3 = {
         y: 60,
       },
       position: 5,
+      animations: [
+        {
+          x: 40,
+          y: 60,
+        },
+        initial_positions[0],
+      ],
     },
     {
       ...players.central1,
@@ -302,6 +361,16 @@ const positions_5x1_serve_3 = {
         x: 60,
         y: 20,
       },
+      animations: [
+        {
+          x: 60,
+          y: 20,
+        },
+        {
+          x: 20,
+          y: 5,
+        },
+      ],
       position: 3,
     },
     {
@@ -311,6 +380,16 @@ const positions_5x1_serve_3 = {
         x: 80,
         y: 15,
       },
+      animations: [
+        {
+          x: 80,
+          y: 15,
+        },
+        {
+          x: 80,
+          y: 5,
+        },
+      ],
       position: 2,
     },
   ],
@@ -585,7 +664,7 @@ const positions_5x1_receive_1 = {
           x: 50,
           y: 55,
         },
-        initial_positions[1],
+        initial_positions[2],
       ],
       position: 6,
     },
@@ -600,10 +679,10 @@ const positions_5x1_receive_1 = {
         initial_positions[2],
         initial_positions[2],
         {
-          x: 20,
+          x: 30,
           y: 45,
         },
-        initial_positions[2],
+        initial_positions[1],
       ],
       position: 5,
     },
@@ -687,7 +766,7 @@ const positions_5x1_receive_1 = {
   ],
 };
 const positions_5x1_receive_2 = {
-  keyframes: 0,
+  keyframes: 4,
   positions: [
     {
       ...players.central1,
@@ -707,6 +786,18 @@ const positions_5x1_receive_2 = {
         x: 80,
         y: 67,
       },
+      animations: [
+        {
+          x: 80,
+          y: 67,
+        },
+        initial_positions[1],
+        {
+          x: 50,
+          y: 45,
+        },
+        initial_positions[1],
+      ],
       position: 1,
     },
     {
@@ -716,6 +807,21 @@ const positions_5x1_receive_2 = {
         x: 65,
         y: 25,
       },
+      animations: [
+        {
+          x: 65,
+          y: 25,
+        },
+        {
+          x: 65,
+          y: 15,
+        },
+        {
+          x: 65,
+          y: 15,
+        },
+        initial_positions[0],
+      ],
       position: 6,
     },
     {
@@ -725,6 +831,18 @@ const positions_5x1_receive_2 = {
         x: 50,
         y: 75,
       },
+      animations: [
+        {
+          x: 50,
+          y: 75,
+        },
+        initial_positions[2],
+        {
+          x: 20,
+          y: 35,
+        },
+        initial_positions[2],
+      ],
       position: 5,
     },
     {
@@ -734,6 +852,20 @@ const positions_5x1_receive_2 = {
         x: 20,
         y: 67,
       },
+      animations: [
+        {
+          x: 20,
+          y: 67,
+        },
+        {
+          x: 5,
+          y: 35,
+        },
+        {
+          x: 20,
+          y: 5,
+        },
+      ],
       position: 4,
     },
     {
@@ -743,6 +875,20 @@ const positions_5x1_receive_2 = {
         x: 75,
         y: 15,
       },
+      animations: [
+        {
+          x: 75,
+          y: 15,
+        },
+        {
+          x: 95,
+          y: 35,
+        },
+        {
+          x: 80,
+          y: 5,
+        },
+      ],
       position: 3,
     },
     {
@@ -752,12 +898,26 @@ const positions_5x1_receive_2 = {
         x: 90,
         y: 35,
       },
+      animations: [
+        {
+          x: 90,
+          y: 35,
+        },
+        {
+          x: 50,
+          y: 35,
+        },
+        {
+          x: 50,
+          y: 5,
+        },
+      ],
       position: 2,
     },
   ],
 };
 const positions_5x1_receive_3 = {
-  keyframes: 0,
+  keyframes: 4,
   positions: [
     {
       ...players.central2,
@@ -777,6 +937,21 @@ const positions_5x1_receive_3 = {
         x: 80,
         y: 67,
       },
+      animations: [
+        {
+          x: 80,
+          y: 67,
+        },
+        {
+          x: 80,
+          y: 67,
+        },
+        {
+          x: 80,
+          y: 45,
+        },
+        initial_positions[2],
+      ],
       position: 1,
     },
     {
@@ -786,6 +961,21 @@ const positions_5x1_receive_3 = {
         x: 50,
         y: 75,
       },
+      animations: [
+        {
+          x: 50,
+          y: 75,
+        },
+        {
+          x: 50,
+          y: 65,
+        },
+        {
+          x: 50,
+          y: 45,
+        },
+        initial_positions[1],
+      ],
       position: 6,
     },
     {
@@ -795,6 +985,24 @@ const positions_5x1_receive_3 = {
         x: 45,
         y: 15,
       },
+      animations: [
+        {
+          x: 45,
+          y: 15,
+        },
+        {
+          x: 65,
+          y: 15,
+        },
+        {
+          x: 65,
+          y: 15,
+        },
+        {
+          x: 80,
+          y: 5,
+        },
+      ],
       position: 5,
     },
     {
@@ -804,6 +1012,20 @@ const positions_5x1_receive_3 = {
         x: 10,
         y: 15,
       },
+      animations: [
+        {
+          x: 10,
+          y: 15,
+        },
+        {
+          x: 45,
+          y: 35,
+        },
+        {
+          x: 50,
+          y: 5,
+        },
+      ],
       position: 4,
     },
     {
@@ -813,6 +1035,20 @@ const positions_5x1_receive_3 = {
         x: 20,
         y: 67,
       },
+      animations: [
+        {
+          x: 20,
+          y: 67,
+        },
+        {
+          x: 5,
+          y: 35,
+        },
+        {
+          x: 20,
+          y: 5,
+        },
+      ],
       position: 3,
     },
     {
@@ -822,6 +1058,21 @@ const positions_5x1_receive_3 = {
         x: 80,
         y: 15,
       },
+      animations: [
+        {
+          x: 80,
+          y: 15,
+        },
+        {
+          x: 95,
+          y: 35,
+        },
+        {
+          x: 80,
+          y: 5,
+        },
+        initial_positions[0],
+      ],
       position: 2,
     },
   ],

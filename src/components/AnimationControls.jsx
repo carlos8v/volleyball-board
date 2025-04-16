@@ -1,10 +1,29 @@
+import { useEffect } from "react";
 import { useControls } from "../hooks/useControls";
 import { classnames } from "../utils/classnames";
+import { bindEvents } from "../utils/events";
 import { Timeline } from "./ui/timeline";
 
 export function AnimationControls() {
   const { isPlaying, animationFrame, setAnimationFrame, keyframes } =
     useControls();
+
+  useEffect(() => {
+    if (!isPlaying) return;
+
+    const cleanup = bindEvents([
+      {
+        key: "left",
+        cb: () => setAnimationFrame(Math.max(animationFrame - 1, 0)),
+      },
+      {
+        key: "right",
+        cb: () => setAnimationFrame(Math.min(animationFrame + 1, keyframes)),
+      },
+    ]);
+
+    return cleanup;
+  }, [isPlaying, setAnimationFrame, animationFrame, keyframes]);
 
   return (
     <div

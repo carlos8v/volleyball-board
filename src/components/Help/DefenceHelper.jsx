@@ -21,9 +21,9 @@ export function DefenceHelper({ children, active, onNext }) {
         <p className="mb-4 text-sm">
           Quando ativado move os jogadores para a posição de defesa para receber
           um saque. Necessário ativar o botão{" "}
-          <div className="inline-flex items-center justify-center rounded bg-indigo-900 p-1">
+          <span className="inline-flex items-center justify-center rounded bg-indigo-900 p-1">
             <MapPin className="h-4 w-4 text-white" />
-          </div>{" "}
+          </span>{" "}
           (Mostrar posicionamento).
         </p>
         <div className="mt-2 flex w-full items-center justify-between">

@@ -4,13 +4,10 @@ import { PositionControls } from "./components/PositionControls";
 
 import { useControls } from "./hooks/useControls";
 
-import { positions } from "./data";
 import { AnimationControls } from "./components/AnimationControls";
 
 function App() {
-  const { isPlaying, currentRotation, defensivePosition } = useControls();
-
-  const currentPositions = positions[defensivePosition ? "receive" : "serve"];
+  const { isPlaying, getPositions } = useControls();
 
   return (
     <main className="flex h-full min-h-dvh min-w-full items-center justify-center overflow-hidden bg-indigo-900">
@@ -20,7 +17,7 @@ function App() {
           <div className="bg-orange-500/75"></div>
           <div className="bg-orange-500/75"></div>
         </div>
-        {currentPositions[currentRotation - 1].positions
+        {getPositions()
           .sort((a, b) => a.id - b.id)
           .map((props) => (
             <Position key={props.id} {...props} />

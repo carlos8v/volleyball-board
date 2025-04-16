@@ -5,15 +5,28 @@ export const useControls = create((set, get) => ({
   isPlaying: false,
   keyframes: 0,
   animationFrame: 0,
-  setAnimationFrame: (frame) => set({ animationFrame: frame }),
-  playAnimations: () => {
-    const { isPlaying, defensivePosition, currentRotation } = get();
+  getPositions: () => {
+    const { defensivePosition, currentRotation } = get();
+    const rotations =
+      positions[defensivePosition ? "receive" : "serve"][currentRotation - 1];
+
+    return rotations.positions;
+  },
+  getKeyframes: () => {
+    const { defensivePosition, currentRotation } = get();
     const { keyframes } =
       positions[defensivePosition ? "receive" : "serve"][currentRotation - 1];
 
+    return Math.max(keyframes - 1, 0);
+  },
+  setAnimationFrame: (frame) => set({ animationFrame: frame }),
+  playAnimations: () => {
+    const { isPlaying, getKeyframes } = get();
+    const keyframes = getKeyframes();
+
     set({
       isPlaying: !isPlaying,
-      keyframes: !isPlaying ? Math.max(keyframes - 1, 0) : 0,
+      keyframes: !isPlaying ? keyframes : 0,
       animationFrame: 0,
     });
   },

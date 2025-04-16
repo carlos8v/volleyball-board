@@ -28,24 +28,34 @@ export function Controls() {
     const cleanup = bindEvents([
       {
         key: "1",
-        cb: () => toggleShowPosition(),
+        cb: () => playAnimations(),
       },
       {
         key: "2",
-        cb: () => toggleDefensivePosition(),
+        cb: () => toggleShowPosition(),
       },
       {
         key: "3",
+        cb: () => toggleDefensivePosition(),
+      },
+      {
+        key: "4",
         cb: () => toggleShowNumbers(),
       },
     ]);
 
     return cleanup;
-  }, [toggleShowPosition, toggleDefensivePosition, toggleShowNumbers]);
+  }, [
+    playAnimations,
+    toggleShowPosition,
+    toggleDefensivePosition,
+    toggleShowNumbers,
+  ]);
 
   const controls = [
     {
       id: "position",
+      key: 2,
       active: showPosition,
       disabled: isPlaying,
       Icon: (
@@ -61,6 +71,7 @@ export function Controls() {
     },
     {
       id: "defensive",
+      key: 3,
       disabled: isPlaying,
       active: defensivePosition,
       Icon: (
@@ -76,6 +87,7 @@ export function Controls() {
     },
     {
       id: "numbers",
+      key: 2,
       active: showNumbers,
       disabled: false,
       Icon: (
@@ -116,9 +128,18 @@ export function Controls() {
             })}
           />
         )}
+        <span
+          className={classnames({
+            "absolute right-1 bottom-0 text-sm font-thin transition select-none": true,
+            "text-white": isPlaying,
+            "text-zinc-600": !isPlaying,
+          })}
+        >
+          1
+        </span>
       </button>
       <span className="my-2 w-px bg-zinc-200"></span>
-      {controls.map(({ id, active, disabled, Icon, cb, wrapper }, idx) => {
+      {controls.map(({ id, key, active, disabled, Icon, cb, wrapper }, idx) => {
         const Wrapper = wrapper;
 
         return (
@@ -145,7 +166,7 @@ export function Controls() {
                   "text-zinc-600": !active,
                 })}
               >
-                {idx + 1}
+                {key}
               </span>
             </button>
           </Wrapper>
