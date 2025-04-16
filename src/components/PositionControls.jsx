@@ -47,7 +47,12 @@ export function PositionControls() {
             <SelectValue placeholder="Selecionar sistema" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="5x1">Sistema 5x1</SelectItem>
+            <SelectItem value="5x1">
+              <p>
+                <span className="hidden sm:mr-1 sm:inline-block">Sistema</span>
+                5x1
+              </p>
+            </SelectItem>
           </SelectContent>
         </Select>
         <Select
@@ -59,12 +64,36 @@ export function PositionControls() {
             <SelectValue placeholder="Rotação" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="1">Rotação 1</SelectItem>
-            <SelectItem value="2">Rotação 2</SelectItem>
-            <SelectItem value="3">Rotação 3</SelectItem>
-            <SelectItem value="4">Rotação 4</SelectItem>
-            <SelectItem value="5">Rotação 5</SelectItem>
-            <SelectItem value="6">Rotação 6</SelectItem>
+            <SelectItem value="1">
+              <p>
+                <span className="hidden sm:mr-1 sm:inline-block">Rotação</span>1
+              </p>
+            </SelectItem>
+            <SelectItem value="2">
+              <p>
+                <span className="hidden sm:mr-1 sm:inline-block">Rotação</span>2
+              </p>
+            </SelectItem>
+            <SelectItem value="3">
+              <p>
+                <span className="hidden sm:mr-1 sm:inline-block">Rotação</span>3
+              </p>
+            </SelectItem>
+            <SelectItem value="4">
+              <p>
+                <span className="hidden sm:mr-1 sm:inline-block">Rotação</span>4
+              </p>
+            </SelectItem>
+            <SelectItem value="5">
+              <p>
+                <span className="hidden sm:mr-1 sm:inline-block">Rotação</span>5
+              </p>
+            </SelectItem>
+            <SelectItem value="6">
+              <p>
+                <span className="hidden sm:mr-1 sm:inline-block">Rotação</span>6
+              </p>
+            </SelectItem>
           </SelectContent>
         </Select>
       </div>
