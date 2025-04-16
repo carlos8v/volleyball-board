@@ -1,12 +1,21 @@
 import { create } from "zustand";
+import { positions } from "../data";
 
 export const useControls = create((set, get) => ({
   isPlaying: false,
+  keyframes: 0,
   animationFrame: 0,
   setAnimationFrame: (frame) => set({ animationFrame: frame }),
   playAnimations: () => {
-    const { isPlaying } = get();
-    set({ isPlaying: !isPlaying, animationFrame: 0 });
+    const { isPlaying, defensivePosition, currentRotation } = get();
+    const { keyframes } =
+      positions[defensivePosition ? "receive" : "serve"][currentRotation - 1];
+
+    set({
+      isPlaying: !isPlaying,
+      keyframes: !isPlaying ? Math.max(keyframes - 1, 0) : 0,
+      animationFrame: 0,
+    });
   },
   currentRotation: 1,
   previousRotation: () => {

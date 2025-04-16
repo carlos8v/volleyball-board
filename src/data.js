@@ -71,901 +71,971 @@ const initial_positions = [
 ];
 
 // 5x1 Positions: Serve
-const positions_5x1_serve_1 = [
-  {
-    ...players.central1,
-    from: {
-      x: -15,
-      y: 15,
+const positions_5x1_serve_1 = {
+  keyframes: 2,
+  positions: [
+    {
+      ...players.central1,
+      from: {
+        x: -15,
+        y: 15,
+      },
+      to: {
+        x: -15,
+        y: 15,
+      },
     },
-    to: {
-      x: -15,
-      y: 15,
+    {
+      ...players.setter,
+      from: initial_positions[0],
+      to: {
+        x: 80,
+        y: 110,
+      },
+      animations: [
+        {
+          x: 80,
+          y: 110,
+        },
+        initial_positions[0],
+      ],
+      position: 1,
     },
-  },
-  {
-    ...players.setter,
-    from: initial_positions[0],
-    to: {
-      x: 80,
-      y: 110,
+    {
+      ...players.libero,
+      from: initial_positions[1],
+      to: {
+        x: 50,
+        y: 75,
+      },
+      animations: [
+        {
+          x: 50,
+          y: 75,
+        },
+        initial_positions[1],
+      ],
+      position: 6,
     },
-    position: 1,
-  },
-  {
-    ...players.libero,
-    from: initial_positions[1],
-    to: {
-      x: 50,
-      y: 75,
+    {
+      ...players.outside2,
+      from: initial_positions[2],
+      to: {
+        x: 20,
+        y: 67,
+      },
+      position: 5,
     },
-    position: 6,
-  },
-  {
-    ...players.outside2,
-    from: initial_positions[2],
-    to: {
-      x: 20,
-      y: 67,
+    {
+      ...players.oposite,
+      from: initial_positions[3],
+      to: {
+        x: 35,
+        y: 10,
+      },
+      animations: [
+        {
+          x: 35,
+          y: 10,
+        },
+        {
+          x: 80,
+          y: 5,
+        },
+      ],
+      position: 4,
     },
-    position: 5,
-  },
-  {
-    ...players.oposite,
-    from: initial_positions[3],
-    to: {
-      x: 35,
-      y: 10,
+    {
+      ...players.central2,
+      from: initial_positions[4],
+      to: {
+        x: 50,
+        y: 5,
+      },
+      position: 3,
     },
-    position: 4,
-  },
-  {
-    ...players.central2,
-    from: initial_positions[4],
-    to: {
-      x: 50,
-      y: 5,
+    {
+      ...players.outside1,
+      from: initial_positions[5],
+      to: {
+        x: 65,
+        y: 15,
+      },
+      animations: [
+        {
+          x: 65,
+          y: 15,
+        },
+        {
+          x: 20,
+          y: 5,
+        },
+      ],
+      position: 2,
     },
-    position: 3,
-  },
-  {
-    ...players.outside1,
-    from: initial_positions[5],
-    to: {
-      x: 65,
-      y: 15,
+  ],
+};
+const positions_5x1_serve_2 = {
+  keyframes: 0,
+  positions: [
+    {
+      ...players.central1,
+      from: {
+        x: -15,
+        y: 15,
+      },
+      to: {
+        x: -15,
+        y: 15,
+      },
     },
-    position: 2,
-  },
-];
-const positions_5x1_serve_2 = [
-  {
-    ...players.central1,
-    from: {
-      x: -15,
-      y: 15,
+    {
+      ...players.outside1,
+      from: initial_positions[0],
+      to: {
+        x: 80,
+        y: 110,
+      },
+      position: 1,
     },
-    to: {
-      x: -15,
-      y: 15,
+    {
+      ...players.setter,
+      from: initial_positions[1],
+      to: {
+        x: 76,
+        y: 67,
+      },
+      position: 6,
     },
-  },
-  {
-    ...players.outside1,
-    from: initial_positions[0],
-    to: {
-      x: 80,
-      y: 110,
+    {
+      ...players.libero,
+      from: initial_positions[2],
+      to: {
+        x: 50,
+        y: 75,
+      },
+      position: 5,
     },
-    position: 1,
-  },
-  {
-    ...players.setter,
-    from: initial_positions[1],
-    to: {
-      x: 76,
-      y: 67,
+    {
+      ...players.outside2,
+      from: initial_positions[3],
+      to: {
+        x: 20,
+        y: 15,
+      },
+      position: 4,
     },
-    position: 6,
-  },
-  {
-    ...players.libero,
-    from: initial_positions[2],
-    to: {
-      x: 50,
-      y: 75,
+    {
+      ...players.oposite,
+      from: initial_positions[4],
+      to: {
+        x: 40,
+        y: 20,
+      },
+      position: 3,
     },
-    position: 5,
-  },
-  {
-    ...players.outside2,
-    from: initial_positions[3],
-    to: {
-      x: 20,
-      y: 15,
+    {
+      ...players.central2,
+      from: initial_positions[5],
+      to: {
+        x: 50,
+        y: 5,
+      },
+      position: 2,
     },
-    position: 4,
-  },
-  {
-    ...players.oposite,
-    from: initial_positions[4],
-    to: {
-      x: 40,
-      y: 20,
+  ],
+};
+const positions_5x1_serve_3 = {
+  keyframes: 0,
+  positions: [
+    {
+      ...players.libero,
+      from: {
+        x: -15,
+        y: 15,
+      },
+      to: {
+        x: -15,
+        y: 15,
+      },
     },
-    position: 3,
-  },
-  {
-    ...players.central2,
-    from: initial_positions[5],
-    to: {
-      x: 50,
-      y: 5,
+    {
+      ...players.central2,
+      from: initial_positions[0],
+      to: {
+        x: 80,
+        y: 110,
+      },
+      position: 1,
     },
-    position: 2,
-  },
-];
-const positions_5x1_serve_3 = [
-  {
-    ...players.libero,
-    from: {
-      x: -15,
-      y: 15,
+    {
+      ...players.outside1,
+      from: initial_positions[1],
+      to: {
+        x: 50,
+        y: 75,
+      },
+      position: 6,
     },
-    to: {
-      x: -15,
-      y: 15,
+    {
+      ...players.setter,
+      from: initial_positions[2],
+      to: {
+        x: 40,
+        y: 60,
+      },
+      position: 5,
     },
-  },
-  {
-    ...players.central2,
-    from: initial_positions[0],
-    to: {
-      x: 80,
-      y: 110,
+    {
+      ...players.central1,
+      from: initial_positions[3],
+      to: {
+        x: 50,
+        y: 5,
+      },
+      position: 4,
     },
-    position: 1,
-  },
-  {
-    ...players.outside1,
-    from: initial_positions[1],
-    to: {
-      x: 50,
-      y: 75,
+    {
+      ...players.outside2,
+      from: initial_positions[4],
+      to: {
+        x: 60,
+        y: 20,
+      },
+      position: 3,
     },
-    position: 6,
-  },
-  {
-    ...players.setter,
-    from: initial_positions[2],
-    to: {
-      x: 40,
-      y: 60,
+    {
+      ...players.oposite,
+      from: initial_positions[5],
+      to: {
+        x: 80,
+        y: 15,
+      },
+      position: 2,
     },
-    position: 5,
-  },
-  {
-    ...players.central1,
-    from: initial_positions[3],
-    to: {
-      x: 50,
-      y: 5,
+  ],
+};
+const positions_5x1_serve_4 = {
+  keyframes: 0,
+  positions: [
+    {
+      ...players.central2,
+      from: {
+        x: -15,
+        y: 15,
+      },
+      to: {
+        x: -15,
+        y: 15,
+      },
     },
-    position: 4,
-  },
-  {
-    ...players.outside2,
-    from: initial_positions[4],
-    to: {
-      x: 60,
-      y: 20,
+    {
+      ...players.oposite,
+      from: initial_positions[0],
+      to: {
+        x: 80,
+        y: 110,
+      },
+      position: 1,
     },
-    position: 3,
-  },
-  {
-    ...players.oposite,
-    from: initial_positions[5],
-    to: {
-      x: 80,
-      y: 15,
+    {
+      ...players.libero,
+      from: initial_positions[1],
+      to: {
+        x: 50,
+        y: 75,
+      },
+      position: 6,
     },
-    position: 2,
-  },
-];
-const positions_5x1_serve_4 = [
-  {
-    ...players.central2,
-    from: {
-      x: -15,
-      y: 15,
+    {
+      ...players.outside1,
+      from: initial_positions[2],
+      to: {
+        x: 20,
+        y: 67,
+      },
+      position: 5,
     },
-    to: {
-      x: -15,
-      y: 15,
+    {
+      ...players.setter,
+      from: initial_positions[3],
+      to: {
+        x: 35,
+        y: 10,
+      },
+      position: 4,
     },
-  },
-  {
-    ...players.oposite,
-    from: initial_positions[0],
-    to: {
-      x: 80,
-      y: 110,
+    {
+      ...players.central1,
+      from: initial_positions[4],
+      to: {
+        x: 50,
+        y: 5,
+      },
+      position: 3,
     },
-    position: 1,
-  },
-  {
-    ...players.libero,
-    from: initial_positions[1],
-    to: {
-      x: 50,
-      y: 75,
+    {
+      ...players.outside2,
+      from: initial_positions[5],
+      to: {
+        x: 65,
+        y: 15,
+      },
+      position: 2,
     },
-    position: 6,
-  },
-  {
-    ...players.outside1,
-    from: initial_positions[2],
-    to: {
-      x: 20,
-      y: 67,
+  ],
+};
+const positions_5x1_serve_5 = {
+  keyframes: 0,
+  positions: [
+    {
+      ...players.central2,
+      from: {
+        x: -15,
+        y: 15,
+      },
+      to: {
+        x: -15,
+        y: 15,
+      },
     },
-    position: 5,
-  },
-  {
-    ...players.setter,
-    from: initial_positions[3],
-    to: {
-      x: 35,
-      y: 10,
+    {
+      ...players.outside2,
+      from: initial_positions[0],
+      to: {
+        x: 80,
+        y: 110,
+      },
+      position: 1,
     },
-    position: 4,
-  },
-  {
-    ...players.central1,
-    from: initial_positions[4],
-    to: {
-      x: 50,
-      y: 5,
+    {
+      ...players.oposite,
+      from: initial_positions[1],
+      to: {
+        x: 80,
+        y: 67,
+      },
+      position: 6,
     },
-    position: 3,
-  },
-  {
-    ...players.outside2,
-    from: initial_positions[5],
-    to: {
-      x: 65,
-      y: 15,
+    {
+      ...players.libero,
+      from: initial_positions[2],
+      to: {
+        x: 50,
+        y: 75,
+      },
+      position: 5,
     },
-    position: 2,
-  },
-];
-const positions_5x1_serve_5 = [
-  {
-    ...players.central2,
-    from: {
-      x: -15,
-      y: 15,
+    {
+      ...players.outside1,
+      from: initial_positions[3],
+      to: {
+        x: 20,
+        y: 15,
+      },
+      position: 4,
     },
-    to: {
-      x: -15,
-      y: 15,
+    {
+      ...players.setter,
+      from: initial_positions[4],
+      to: {
+        x: 40,
+        y: 20,
+      },
+      position: 3,
     },
-  },
-  {
-    ...players.outside2,
-    from: initial_positions[0],
-    to: {
-      x: 80,
-      y: 110,
+    {
+      ...players.central1,
+      from: initial_positions[5],
+      to: {
+        x: 50,
+        y: 5,
+      },
+      position: 2,
     },
-    position: 1,
-  },
-  {
-    ...players.oposite,
-    from: initial_positions[1],
-    to: {
-      x: 80,
-      y: 67,
+  ],
+};
+const positions_5x1_serve_6 = {
+  keyframes: 0,
+  positions: [
+    {
+      ...players.libero,
+      from: {
+        x: -15,
+        y: 15,
+      },
+      to: {
+        x: -15,
+        y: 15,
+      },
     },
-    position: 6,
-  },
-  {
-    ...players.libero,
-    from: initial_positions[2],
-    to: {
-      x: 50,
-      y: 75,
+    {
+      ...players.central1,
+      from: initial_positions[0],
+      to: {
+        x: 80,
+        y: 110,
+      },
+      position: 1,
     },
-    position: 5,
-  },
-  {
-    ...players.outside1,
-    from: initial_positions[3],
-    to: {
-      x: 20,
-      y: 15,
+    {
+      ...players.outside2,
+      from: initial_positions[1],
+      to: {
+        x: 50,
+        y: 75,
+      },
+      position: 6,
     },
-    position: 4,
-  },
-  {
-    ...players.setter,
-    from: initial_positions[4],
-    to: {
-      x: 40,
-      y: 20,
+    {
+      ...players.oposite,
+      from: initial_positions[2],
+      to: {
+        x: 40,
+        y: 60,
+      },
+      position: 5,
     },
-    position: 3,
-  },
-  {
-    ...players.central1,
-    from: initial_positions[5],
-    to: {
-      x: 50,
-      y: 5,
+    {
+      ...players.central2,
+      from: initial_positions[3],
+      to: {
+        x: 50,
+        y: 5,
+      },
+      position: 4,
     },
-    position: 2,
-  },
-];
-const positions_5x1_serve_6 = [
-  {
-    ...players.libero,
-    from: {
-      x: -15,
-      y: 15,
+    {
+      ...players.outside1,
+      from: initial_positions[4],
+      to: {
+        x: 60,
+        y: 20,
+      },
+      position: 3,
     },
-    to: {
-      x: -15,
-      y: 15,
+    {
+      ...players.setter,
+      from: initial_positions[5],
+      to: {
+        x: 80,
+        y: 15,
+      },
+      position: 2,
     },
-  },
-  {
-    ...players.central1,
-    from: initial_positions[0],
-    to: {
-      x: 80,
-      y: 110,
-    },
-    position: 1,
-  },
-  {
-    ...players.outside2,
-    from: initial_positions[1],
-    to: {
-      x: 50,
-      y: 75,
-    },
-    position: 6,
-  },
-  {
-    ...players.oposite,
-    from: initial_positions[2],
-    to: {
-      x: 40,
-      y: 60,
-    },
-    position: 5,
-  },
-  {
-    ...players.central2,
-    from: initial_positions[3],
-    to: {
-      x: 50,
-      y: 5,
-    },
-    position: 4,
-  },
-  {
-    ...players.outside1,
-    from: initial_positions[4],
-    to: {
-      x: 60,
-      y: 20,
-    },
-    position: 3,
-  },
-  {
-    ...players.setter,
-    from: initial_positions[5],
-    to: {
-      x: 80,
-      y: 15,
-    },
-    position: 2,
-  },
-];
+  ],
+};
 
 // 5X1 Positions: Receive
-const positions_5x1_receive_1 = [
-  {
-    ...players.central1,
-    from: {
-      x: -15,
-      y: 15,
+const positions_5x1_receive_1 = {
+  keyframes: 4,
+  positions: [
+    {
+      ...players.central1,
+      from: {
+        x: -15,
+        y: 15,
+      },
+      to: {
+        x: -15,
+        y: 15,
+      },
     },
-    to: {
-      x: -15,
-      y: 15,
-    },
-  },
-  {
-    ...players.setter,
-    from: initial_positions[0],
-    to: {
-      x: 90,
-      y: 80,
-    },
-    animations: [
-      {
+    {
+      ...players.setter,
+      from: initial_positions[0],
+      to: {
         x: 90,
         y: 80,
       },
-      {
-        x: 65,
-        y: 15,
-      },
-      {
-        x: 65,
-        y: 15,
-      },
-      initial_positions[0],
-    ],
-    position: 1,
-  },
-  {
-    ...players.libero,
-    from: initial_positions[1],
-    to: {
-      x: 50,
-      y: 67,
+      animations: [
+        {
+          x: 90,
+          y: 80,
+        },
+        {
+          x: 65,
+          y: 15,
+        },
+        {
+          x: 65,
+          y: 15,
+        },
+        initial_positions[0],
+      ],
+      position: 1,
     },
-    animations: [
-      {
+    {
+      ...players.libero,
+      from: initial_positions[1],
+      to: {
         x: 50,
         y: 67,
       },
-      {
-        x: 50,
+      animations: [
+        {
+          x: 50,
+          y: 67,
+        },
+        {
+          x: 50,
+          y: 67,
+        },
+        {
+          x: 50,
+          y: 55,
+        },
+        initial_positions[1],
+      ],
+      position: 6,
+    },
+    {
+      ...players.outside2,
+      from: initial_positions[2],
+      to: {
+        x: 20,
         y: 67,
       },
-      {
-        x: 50,
-        y: 55,
-      },
-      initial_positions[1]
-    ],
-    position: 6,
-  },
-  {
-    ...players.outside2,
-    from: initial_positions[2],
-    to: {
-      x: 20,
-      y: 67,
+      animations: [
+        initial_positions[2],
+        initial_positions[2],
+        {
+          x: 20,
+          y: 45,
+        },
+        initial_positions[2],
+      ],
+      position: 5,
     },
-    animations: [
-      initial_positions[2],
-      initial_positions[2],
-      {
-        x: 20,
-        y: 45,
-      },
-      initial_positions[2],
-    ],
-    position: 5,
-  },
-  {
-    ...players.oposite,
-    from: initial_positions[3],
-    to: {
-      x: 20,
-      y: 15,
-    },
-    animations: [
-      {
+    {
+      ...players.oposite,
+      from: initial_positions[3],
+      to: {
         x: 20,
         y: 15,
       },
-      {
-        x: 5,
-        y: 35,
+      animations: [
+        {
+          x: 20,
+          y: 15,
+        },
+        {
+          x: 5,
+          y: 35,
+        },
+        {
+          x: 20,
+          y: 5,
+        },
+        {
+          x: 80,
+          y: 5,
+        },
+      ],
+      position: 4,
+    },
+    {
+      ...players.central2,
+      from: initial_positions[4],
+      to: {
+        x: 50,
+        y: 15,
       },
-      {
-        x: 20,
-        y: 5,
-      },
-      {
+      animations: [
+        {
+          x: 50,
+          y: 15,
+        },
+        {
+          x: 50,
+          y: 35,
+        },
+        {
+          x: 50,
+          y: 5,
+        },
+      ],
+      position: 3,
+    },
+    {
+      ...players.outside1,
+      from: initial_positions[5],
+      to: {
         x: 80,
-        y: 5,
+        y: 67,
       },
-    ],
-    position: 4,
-  },
-  {
-    ...players.central2,
-    from: initial_positions[4],
-    to: {
-      x: 50,
-      y: 15,
+      animations: [
+        {
+          x: 80,
+          y: 67,
+        },
+        {
+          x: 95,
+          y: 35,
+        },
+        {
+          x: 80,
+          y: 5,
+        },
+        {
+          x: 20,
+          y: 5,
+        },
+      ],
+      position: 2,
     },
-    animations: [
-      {
-        x: 50,
+  ],
+};
+const positions_5x1_receive_2 = {
+  keyframes: 0,
+  positions: [
+    {
+      ...players.central1,
+      from: {
+        x: -15,
         y: 15,
       },
-      {
-        x: 50,
-        y: 35,
+      to: {
+        x: -15,
+        y: 15,
       },
-      {
-        x: 50,
-        y: 5,
-      },
-    ],
-    position: 3,
-  },
-  {
-    ...players.outside1,
-    from: initial_positions[5],
-    to: {
-      x: 80,
-      y: 67,
     },
-    animations: [
-      {
+    {
+      ...players.outside1,
+      from: initial_positions[0],
+      to: {
         x: 80,
         y: 67,
       },
-      {
-        x: 95,
-        y: 35,
+      position: 1,
+    },
+    {
+      ...players.setter,
+      from: initial_positions[1],
+      to: {
+        x: 65,
+        y: 25,
       },
-      {
+      position: 6,
+    },
+    {
+      ...players.libero,
+      from: initial_positions[2],
+      to: {
+        x: 50,
+        y: 75,
+      },
+      position: 5,
+    },
+    {
+      ...players.outside2,
+      from: initial_positions[3],
+      to: {
+        x: 20,
+        y: 67,
+      },
+      position: 4,
+    },
+    {
+      ...players.oposite,
+      from: initial_positions[4],
+      to: {
+        x: 75,
+        y: 15,
+      },
+      position: 3,
+    },
+    {
+      ...players.central2,
+      from: initial_positions[5],
+      to: {
         x: 90,
-        y: 5,
+        y: 35,
       },
-      {
+      position: 2,
+    },
+  ],
+};
+const positions_5x1_receive_3 = {
+  keyframes: 0,
+  positions: [
+    {
+      ...players.central2,
+      from: {
+        x: -15,
+        y: 15,
+      },
+      to: {
+        x: -15,
+        y: 15,
+      },
+    },
+    {
+      ...players.libero,
+      from: initial_positions[0],
+      to: {
+        x: 80,
+        y: 67,
+      },
+      position: 1,
+    },
+    {
+      ...players.outside1,
+      from: initial_positions[1],
+      to: {
+        x: 50,
+        y: 75,
+      },
+      position: 6,
+    },
+    {
+      ...players.setter,
+      from: initial_positions[2],
+      to: {
+        x: 45,
+        y: 15,
+      },
+      position: 5,
+    },
+    {
+      ...players.central1,
+      from: initial_positions[3],
+      to: {
+        x: 10,
+        y: 15,
+      },
+      position: 4,
+    },
+    {
+      ...players.outside2,
+      from: initial_positions[4],
+      to: {
         x: 20,
-        y: 5,
+        y: 67,
       },
-    ],
-    position: 2,
-  },
-];
-const positions_5x1_receive_2 = [
-  {
-    ...players.central1,
-    from: {
-      x: -15,
-      y: 15,
+      position: 3,
     },
-    to: {
-      x: -15,
-      y: 15,
+    {
+      ...players.oposite,
+      from: initial_positions[5],
+      to: {
+        x: 80,
+        y: 15,
+      },
+      position: 2,
     },
-  },
-  {
-    ...players.outside1,
-    from: initial_positions[0],
-    to: {
-      x: 80,
-      y: 67,
+  ],
+};
+const positions_5x1_receive_4 = {
+  keyframes: 0,
+  positions: [
+    {
+      ...players.central2,
+      from: {
+        x: -15,
+        y: 15,
+      },
+      to: {
+        x: -15,
+        y: 15,
+      },
     },
-    position: 1,
-  },
-  {
-    ...players.setter,
-    from: initial_positions[1],
-    to: {
-      x: 65,
-      y: 25,
+    {
+      ...players.oposite,
+      from: initial_positions[0],
+      to: {
+        x: 93,
+        y: 90,
+      },
+      position: 1,
     },
-    position: 6,
-  },
-  {
-    ...players.libero,
-    from: initial_positions[2],
-    to: {
-      x: 50,
-      y: 75,
+    {
+      ...players.libero,
+      from: initial_positions[1],
+      to: {
+        x: 80,
+        y: 67,
+      },
+      position: 6,
     },
-    position: 5,
-  },
-  {
-    ...players.outside2,
-    from: initial_positions[3],
-    to: {
-      x: 20,
-      y: 67,
+    {
+      ...players.outside1,
+      from: initial_positions[2],
+      to: {
+        x: 50,
+        y: 67,
+      },
+      position: 5,
     },
-    position: 4,
-  },
-  {
-    ...players.oposite,
-    from: initial_positions[4],
-    to: {
-      x: 75,
-      y: 15,
+    {
+      ...players.setter,
+      from: initial_positions[3],
+      to: {
+        x: 5,
+        y: 10,
+      },
+      position: 4,
     },
-    position: 3,
-  },
-  {
-    ...players.central2,
-    from: initial_positions[5],
-    to: {
-      x: 90,
-      y: 35,
+    {
+      ...players.central1,
+      from: initial_positions[4],
+      to: {
+        x: 10,
+        y: 25,
+      },
+      position: 3,
     },
-    position: 2,
-  },
-];
-const positions_5x1_receive_3 = [
-  {
-    ...players.central2,
-    from: {
-      x: -15,
-      y: 15,
+    {
+      ...players.outside2,
+      from: initial_positions[5],
+      to: {
+        x: 20,
+        y: 67,
+      },
+      position: 2,
     },
-    to: {
-      x: -15,
-      y: 15,
+  ],
+};
+const positions_5x1_receive_5 = {
+  keyframes: 0,
+  positions: [
+    {
+      ...players.central2,
+      from: {
+        x: -15,
+        y: 15,
+      },
+      to: {
+        x: -15,
+        y: 15,
+      },
     },
-  },
-  {
-    ...players.libero,
-    from: initial_positions[0],
-    to: {
-      x: 80,
-      y: 67,
+    {
+      ...players.outside2,
+      from: initial_positions[0],
+      to: {
+        x: 80,
+        y: 67,
+      },
+      position: 1,
     },
-    position: 1,
-  },
-  {
-    ...players.outside1,
-    from: initial_positions[1],
-    to: {
-      x: 50,
-      y: 75,
+    {
+      ...players.oposite,
+      from: initial_positions[1],
+      to: {
+        x: 60,
+        y: 90,
+      },
+      position: 6,
     },
-    position: 6,
-  },
-  {
-    ...players.setter,
-    from: initial_positions[2],
-    to: {
-      x: 45,
-      y: 15,
+    {
+      ...players.libero,
+      from: initial_positions[2],
+      to: {
+        x: 50,
+        y: 75,
+      },
+      position: 5,
     },
-    position: 5,
-  },
-  {
-    ...players.central1,
-    from: initial_positions[3],
-    to: {
-      x: 10,
-      y: 15,
+    {
+      ...players.outside1,
+      from: initial_positions[3],
+      to: {
+        x: 20,
+        y: 67,
+      },
+      position: 4,
     },
-    position: 4,
-  },
-  {
-    ...players.outside2,
-    ffrom: initial_positions[4],
-    to: {
-      x: 20,
-      y: 67,
+    {
+      ...players.setter,
+      from: initial_positions[4],
+      to: {
+        x: 60,
+        y: 10,
+      },
+      position: 3,
     },
-    position: 3,
-  },
-  {
-    ...players.oposite,
-    from: initial_positions[5],
-    to: {
-      x: 80,
-      y: 15,
+    {
+      ...players.central1,
+      from: initial_positions[5],
+      to: {
+        x: 80,
+        y: 15,
+      },
+      position: 2,
     },
-    position: 2,
-  },
-];
-const positions_5x1_receive_4 = [
-  {
-    ...players.central2,
-    from: {
-      x: -15,
-      y: 15,
+  ],
+};
+const positions_5x1_receive_6 = {
+  keyframes: 0,
+  positions: [
+    {
+      ...players.central1,
+      from: {
+        x: -15,
+        y: 15,
+      },
+      to: {
+        x: -15,
+        y: 15,
+      },
     },
-    to: {
-      x: -15,
-      y: 15,
+    {
+      ...players.libero,
+      from: initial_positions[0],
+      to: {
+        x: 80,
+        y: 67,
+      },
+      position: 1,
     },
-  },
-  {
-    ...players.oposite,
-    from: initial_positions[0],
-    to: {
-      x: 93,
-      y: 90,
+    {
+      ...players.outside2,
+      from: initial_positions[1],
+      to: {
+        x: 50,
+        y: 75,
+      },
+      position: 6,
     },
-    position: 1,
-  },
-  {
-    ...players.libero,
-    from: initial_positions[1],
-    to: {
-      x: 80,
-      y: 67,
+    {
+      ...players.oposite,
+      from: initial_positions[2],
+      to: {
+        x: 40,
+        y: 90,
+      },
+      position: 5,
     },
-    position: 6,
-  },
-  {
-    ...players.outside1,
-    from: initial_positions[2],
-    to: {
-      x: 50,
-      y: 67,
+    {
+      ...players.central2,
+      from: initial_positions[3],
+      to: {
+        x: 10,
+        y: 15,
+      },
+      position: 4,
     },
-    position: 5,
-  },
-  {
-    ...players.setter,
-    from: initial_positions[3],
-    to: {
-      x: 5,
-      y: 10,
+    {
+      ...players.outside1,
+      from: initial_positions[4],
+      to: {
+        x: 20,
+        y: 67,
+      },
+      position: 3,
     },
-    position: 4,
-  },
-  {
-    ...players.central1,
-    from: initial_positions[4],
-    to: {
-      x: 10,
-      y: 25,
+    {
+      ...players.setter,
+      from: initial_positions[5],
+      to: {
+        x: 60,
+        y: 10,
+      },
+      position: 2,
     },
-    position: 3,
-  },
-  {
-    ...players.outside2,
-    from: initial_positions[5],
-    to: {
-      x: 20,
-      y: 67,
-    },
-    position: 2,
-  },
-];
-const positions_5x1_receive_5 = [
-  {
-    ...players.central2,
-    from: {
-      x: -15,
-      y: 15,
-    },
-    to: {
-      x: -15,
-      y: 15,
-    },
-  },
-  {
-    ...players.outside2,
-    from: initial_positions[0],
-    to: {
-      x: 80,
-      y: 67,
-    },
-    position: 1,
-  },
-  {
-    ...players.oposite,
-    from: initial_positions[1],
-    to: {
-      x: 60,
-      y: 90,
-    },
-    position: 6,
-  },
-  {
-    ...players.libero,
-    from: initial_positions[2],
-    to: {
-      x: 50,
-      y: 75,
-    },
-    position: 5,
-  },
-  {
-    ...players.outside1,
-    from: initial_positions[3],
-    to: {
-      x: 20,
-      y: 67,
-    },
-    position: 4,
-  },
-  {
-    ...players.setter,
-    from: initial_positions[4],
-    to: {
-      x: 60,
-      y: 10,
-    },
-    position: 3,
-  },
-  {
-    ...players.central1,
-    from: initial_positions[5],
-    to: {
-      x: 80,
-      y: 15,
-    },
-    position: 2,
-  },
-];
-const positions_5x1_receive_6 = [
-  {
-    ...players.central1,
-    from: {
-      x: -15,
-      y: 15,
-    },
-    to: {
-      x: -15,
-      y: 15,
-    },
-  },
-  {
-    ...players.libero,
-    from: initial_positions[0],
-    to: {
-      x: 80,
-      y: 67,
-    },
-    position: 1,
-  },
-  {
-    ...players.outside2,
-    from: initial_positions[1],
-    to: {
-      x: 50,
-      y: 75,
-    },
-    position: 6,
-  },
-  {
-    ...players.oposite,
-    from: initial_positions[2],
-    to: {
-      x: 40,
-      y: 90,
-    },
-    position: 5,
-  },
-  {
-    ...players.central2,
-    from: initial_positions[3],
-    to: {
-      x: 10,
-      y: 15,
-    },
-    position: 4,
-  },
-  {
-    ...players.outside1,
-    from: initial_positions[4],
-    to: {
-      x: 20,
-      y: 67,
-    },
-    position: 3,
-  },
-  {
-    ...players.setter,
-    from: initial_positions[5],
-    to: {
-      x: 60,
-      y: 10,
-    },
-    position: 2,
-  },
-];
+  ],
+};
 
 export const positions_5x1_serve = [
   positions_5x1_serve_1,

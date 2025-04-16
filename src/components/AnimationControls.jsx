@@ -3,7 +3,8 @@ import { classnames } from "../utils/classnames";
 import { Timeline } from "./ui/timeline";
 
 export function AnimationControls() {
-  const { isPlaying, animationFrame, setAnimationFrame } = useControls();
+  const { isPlaying, animationFrame, setAnimationFrame, keyframes } =
+    useControls();
 
   return (
     <div
@@ -15,7 +16,7 @@ export function AnimationControls() {
     >
       <small className="mb-2 block">Linha do tempo</small>
       <Timeline
-        max={3}
+        max={keyframes}
         step={1}
         value={[animationFrame]}
         onValueChange={setAnimationFrame}

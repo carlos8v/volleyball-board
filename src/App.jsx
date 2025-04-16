@@ -20,7 +20,7 @@ function App() {
           <div className="bg-orange-500/75"></div>
           <div className="bg-orange-500/75"></div>
         </div>
-        {currentPositions[currentRotation - 1]
+        {currentPositions[currentRotation - 1].positions
           .sort((a, b) => a.id - b.id)
           .map((props) => (
             <Position key={props.id} {...props} />
