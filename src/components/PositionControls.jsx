@@ -32,7 +32,7 @@ export function PositionControls() {
   }, [nextRotation, previousRotation]);
 
   return (
-    <div className="fixed bottom-0 left-1/2 z-10 mb-4 flex -translate-x-1/2 items-center gap-2">
+    <div className="animate-in slide-in-from-bottom fixed bottom-0 left-1/2 z-10 mb-4 flex -translate-x-1/2 items-center gap-2">
       <div className="flex items-center justify-center rounded-lg bg-white p-1">
         <button
           onClick={() => previousRotation()}

@@ -1,6 +1,13 @@
 import { create } from "zustand";
 
 export const useControls = create((set, get) => ({
+  isPlaying: false,
+  animationFrame: 0,
+  setAnimationFrame: (frame) => set({ animationFrame: frame }),
+  playAnimations: () => {
+    const { isPlaying } = get();
+    set({ isPlaying: !isPlaying, animationFrame: 0 });
+  },
   currentRotation: 1,
   previousRotation: () => {
     const prev = get().currentRotation;

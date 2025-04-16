@@ -1,16 +1,29 @@
 import { useControls } from "../hooks/useControls";
 import { classnames } from "../utils/classnames";
 
-export function Position({ color, label, position, from, to }) {
-  const showPosition = useControls((state) => state.showPosition);
-  const showNumbers = useControls((state) => state.showNumbers);
+export function Position({ color, label, position, from, to, animations }) {
+  const { animationFrame, isPlaying, showPosition, showNumbers } =
+    useControls();
+
+  let playerPosition = from;
+
+  if (isPlaying) {
+    if (!animations) {
+      playerPosition = to;
+    } else {
+      playerPosition =
+        animations[animationFrame] ?? animations[animations.length - 1];
+    }
+  } else if (showPosition) {
+    playerPosition = to;
+  }
 
   return (
     <div
       className="absolute z-0 -translate-1/2 transition-[left,top] duration-[1s]"
       style={{
-        left: `${showPosition ? to.x : from.x}%`,
-        top: `${showPosition ? to.y : from.y}%`,
+        left: `${playerPosition.x}%`,
+        top: `${playerPosition.y}%`,
       }}
     >
       {position ? (

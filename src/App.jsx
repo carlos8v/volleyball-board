@@ -5,9 +5,10 @@ import { PositionControls } from "./components/PositionControls";
 import { useControls } from "./hooks/useControls";
 
 import { positions } from "./data";
+import { AnimationControls } from "./components/AnimationControls";
 
 function App() {
-  const { currentRotation, defensivePosition } = useControls();
+  const { isPlaying, currentRotation, defensivePosition } = useControls();
 
   const currentPositions = positions[defensivePosition ? "receive" : "serve"];
 
@@ -26,7 +27,8 @@ function App() {
           ))}
       </div>
       <Controls />
-      <PositionControls />
+      {!isPlaying ? <PositionControls /> : null}
+      <AnimationControls />
     </main>
   );
 }

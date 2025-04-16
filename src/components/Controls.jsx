@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { MapPin, Hash, Shield, HelpCircle } from "react-feather";
+import { MapPin, Hash, Shield, HelpCircle, Play, Pause } from "react-feather";
 
 import { NumberHelper } from "./Help/NumberHelper";
 import { DefenceHelper } from "./Help/DefenceHelper";
@@ -17,6 +17,8 @@ export function Controls() {
     showPosition,
     toggleShowPosition,
     showNumbers,
+    isPlaying,
+    playAnimations,
     toggleShowNumbers,
     defensivePosition,
     toggleDefensivePosition,
@@ -45,11 +47,12 @@ export function Controls() {
     {
       id: "position",
       active: showPosition,
+      disabled: isPlaying,
       Icon: (
         <MapPin
           className={classnames({
             "h-6 w-6 transition": true,
-            "text-white": showPosition,
+            "text-white": showPosition && !isPlaying,
           })}
         />
       ),
@@ -58,12 +61,13 @@ export function Controls() {
     },
     {
       id: "defensive",
+      disabled: isPlaying,
       active: defensivePosition,
       Icon: (
         <Shield
           className={classnames({
             "h-6 w-6 transition": true,
-            "text-white": defensivePosition,
+            "text-white": defensivePosition && !isPlaying,
           })}
         />
       ),
@@ -73,6 +77,7 @@ export function Controls() {
     {
       id: "numbers",
       active: showNumbers,
+      disabled: false,
       Icon: (
         <Hash
           className={classnames({
@@ -88,7 +93,32 @@ export function Controls() {
 
   return (
     <div className="fixed top-0 left-1/2 z-10 mt-4 flex -translate-x-1/2 gap-2 rounded-lg bg-white p-2">
-      {controls.map(({ id, active, Icon, cb, wrapper }, idx) => {
+      <button
+        className={classnames({
+          "relative cursor-pointer rounded-md p-3 transition": true,
+          "hover:bg-zinc-200": !isPlaying,
+          "bg-indigo-900": isPlaying,
+        })}
+        onClick={() => playAnimations()}
+      >
+        {isPlaying ? (
+          <Pause
+            className={classnames({
+              "h-6 w-6 transition": true,
+              "text-white": isPlaying,
+            })}
+          />
+        ) : (
+          <Play
+            className={classnames({
+              "h-6 w-6 transition": true,
+              "text-white": isPlaying,
+            })}
+          />
+        )}
+      </button>
+      <span className="my-2 w-px bg-zinc-200"></span>
+      {controls.map(({ id, active, disabled, Icon, cb, wrapper }, idx) => {
         const Wrapper = wrapper;
 
         return (
@@ -100,8 +130,9 @@ export function Controls() {
             <button
               type="button"
               onClick={() => cb()}
+              disabled={disabled}
               className={classnames({
-                "relative cursor-pointer rounded-md p-3 transition": true,
+                "relative cursor-pointer rounded-md p-3 transition disabled:cursor-not-allowed disabled:bg-zinc-200": true,
                 "hover:bg-zinc-200": !active,
                 "bg-indigo-900": active,
               })}
@@ -110,7 +141,7 @@ export function Controls() {
               <span
                 className={classnames({
                   "absolute right-1 bottom-0 text-sm font-thin transition select-none": true,
-                  "text-white": active,
+                  "text-white": active && !disabled,
                   "text-zinc-600": !active,
                 })}
               >
