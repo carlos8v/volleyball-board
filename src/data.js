@@ -246,9 +246,15 @@ const positions_5x1_serve_2 = {
     {
       ...players.libero,
       from: initial_positions[2],
-      to: initial_positions[2],
+      to: {
+        x: 25,
+        y: 67,
+      },
       animations: [
-        initial_positions[2],
+        {
+          x: 25,
+          y: 67,
+        },
         {
           x: 20,
           y: 55,
@@ -550,7 +556,7 @@ const positions_5x1_serve_4 = {
   ],
 };
 const positions_5x1_serve_5 = {
-  keyframes: 0,
+  keyframes: 2,
   positions: [
     {
       ...players.central2,
@@ -570,6 +576,16 @@ const positions_5x1_serve_5 = {
         x: 80,
         y: 110,
       },
+      animations: [
+        {
+          x: 80,
+          y: 110,
+        },
+        {
+          x: 50,
+          y: 75,
+        },
+      ],
       position: 1,
     },
     {
@@ -579,15 +595,35 @@ const positions_5x1_serve_5 = {
         x: 80,
         y: 67,
       },
+      animations: [
+        {
+          x: 80,
+          y: 67,
+        },
+        {
+          x: 80,
+          y: 55,
+        },
+      ],
       position: 6,
     },
     {
       ...players.libero,
       from: initial_positions[2],
       to: {
-        x: 50,
-        y: 75,
+        x: 25,
+        y: 67,
       },
+      animations: [
+        {
+          x: 25,
+          y: 67,
+        },
+        {
+          x: 20,
+          y: 55,
+        },
+      ],
       position: 5,
     },
     {
@@ -597,6 +633,16 @@ const positions_5x1_serve_5 = {
         x: 20,
         y: 15,
       },
+      animations: [
+        {
+          x: 20,
+          y: 15,
+        },
+        {
+          x: 20,
+          y: 5,
+        },
+      ],
       position: 4,
     },
     {
@@ -606,6 +652,16 @@ const positions_5x1_serve_5 = {
         x: 40,
         y: 20,
       },
+      animations: [
+        {
+          x: 40,
+          y: 20,
+        },
+        {
+          x: 80,
+          y: 5,
+        },
+      ],
       position: 3,
     },
     {
@@ -620,7 +676,7 @@ const positions_5x1_serve_5 = {
   ],
 };
 const positions_5x1_serve_6 = {
-  keyframes: 0,
+  keyframes: 2,
   positions: [
     {
       ...players.libero,
@@ -640,6 +696,16 @@ const positions_5x1_serve_6 = {
         x: 80,
         y: 110,
       },
+      animations: [
+        {
+          x: 80,
+          y: 110,
+        },
+        {
+          x: 20,
+          y: 55,
+        },
+      ],
       position: 1,
     },
     {
@@ -658,6 +724,16 @@ const positions_5x1_serve_6 = {
         x: 40,
         y: 60,
       },
+      animations: [
+        {
+          x: 40,
+          y: 60,
+        },
+        {
+          x: 80,
+          y: 55,
+        },
+      ],
       position: 5,
     },
     {
@@ -676,6 +752,16 @@ const positions_5x1_serve_6 = {
         x: 60,
         y: 20,
       },
+      animations: [
+        {
+          x: 60,
+          y: 20,
+        },
+        {
+          x: 20,
+          y: 5,
+        },
+      ],
       position: 3,
     },
     {
@@ -685,6 +771,16 @@ const positions_5x1_serve_6 = {
         x: 80,
         y: 15,
       },
+      animations: [
+        {
+          x: 80,
+          y: 15,
+        },
+        {
+          x: 80,
+          y: 5,
+        },
+      ],
       position: 2,
     },
   ],
@@ -1092,12 +1188,12 @@ const positions_5x1_receive_3 = {
       from: initial_positions[2],
       to: {
         x: 45,
-        y: 15,
+        y: 25,
       },
       animations: [
         {
           x: 45,
-          y: 15,
+          y: 25,
         },
         {
           x: 65,
@@ -1241,7 +1337,7 @@ const positions_5x1_receive_4 = {
         },
         initial_positions[2],
         {
-          x: 30,
+          x: 20,
           y: 45,
         },
         {
@@ -1355,7 +1451,7 @@ const positions_5x1_receive_4 = {
   ],
 };
 const positions_5x1_receive_5 = {
-  keyframes: 0,
+  keyframes: 4,
   positions: [
     {
       ...players.central2,
@@ -1375,6 +1471,21 @@ const positions_5x1_receive_5 = {
         x: 80,
         y: 67,
       },
+      animations: [
+        {
+          x: 80,
+          y: 67,
+        },
+        initial_positions[1],
+        {
+          x: 50,
+          y: 50,
+        },
+        {
+          x: 50,
+          y: 75,
+        },
+      ],
       position: 1,
     },
     {
@@ -1384,6 +1495,21 @@ const positions_5x1_receive_5 = {
         x: 60,
         y: 90,
       },
+      animations: [
+        {
+          x: 60,
+          y: 90,
+        },
+        initial_positions[0],
+        {
+          x: 80,
+          y: 45,
+        },
+        {
+          x: 80,
+          y: 55,
+        },
+      ],
       position: 6,
     },
     {
@@ -1393,6 +1519,21 @@ const positions_5x1_receive_5 = {
         x: 50,
         y: 75,
       },
+      animations: [
+        {
+          x: 50,
+          y: 75,
+        },
+        initial_positions[2],
+        {
+          x: 20,
+          y: 45,
+        },
+        {
+          x: 20,
+          y: 55,
+        },
+      ],
       position: 5,
     },
     {
@@ -1402,6 +1543,20 @@ const positions_5x1_receive_5 = {
         x: 20,
         y: 67,
       },
+      animations: [
+        {
+          x: 20,
+          y: 67,
+        },
+        {
+          x: 5,
+          y: 35,
+        },
+        {
+          x: 20,
+          y: 5,
+        },
+      ],
       position: 4,
     },
     {
@@ -1411,6 +1566,24 @@ const positions_5x1_receive_5 = {
         x: 60,
         y: 10,
       },
+      animations: [
+        {
+          x: 60,
+          y: 10,
+        },
+        {
+          x: 65,
+          y: 15,
+        },
+        {
+          x: 65,
+          y: 15,
+        },
+        {
+          x: 80,
+          y: 5,
+        },
+      ],
       position: 3,
     },
     {
@@ -1420,12 +1593,26 @@ const positions_5x1_receive_5 = {
         x: 80,
         y: 15,
       },
+      animations: [
+        {
+          x: 80,
+          y: 15,
+        },
+        {
+          x: 50,
+          y: 35,
+        },
+        {
+          x: 50,
+          y: 5,
+        },
+      ],
       position: 2,
     },
   ],
 };
 const positions_5x1_receive_6 = {
-  keyframes: 0,
+  keyframes: 4,
   positions: [
     {
       ...players.central1,
@@ -1445,6 +1632,21 @@ const positions_5x1_receive_6 = {
         x: 80,
         y: 67,
       },
+      animations: [
+        {
+          x: 80,
+          y: 67,
+        },
+        initial_positions[1],
+        {
+          x: 50,
+          y: 55,
+        },
+        {
+          x: 20,
+          y: 55,
+        },
+      ],
       position: 1,
     },
     {
@@ -1454,6 +1656,21 @@ const positions_5x1_receive_6 = {
         x: 50,
         y: 75,
       },
+      animations: [
+        {
+          x: 50,
+          y: 75,
+        },
+        initial_positions[2],
+        {
+          x: 30,
+          y: 45,
+        },
+        {
+          x: 50,
+          y: 75,
+        },
+      ],
       position: 6,
     },
     {
@@ -1463,6 +1680,21 @@ const positions_5x1_receive_6 = {
         x: 40,
         y: 90,
       },
+      animations: [
+        {
+          x: 40,
+          y: 90,
+        },
+        initial_positions[0],
+        {
+          x: 80,
+          y: 35,
+        },
+        {
+          x: 80,
+          y: 55,
+        },
+      ],
       position: 5,
     },
     {
@@ -1472,6 +1704,20 @@ const positions_5x1_receive_6 = {
         x: 10,
         y: 15,
       },
+      animations: [
+        {
+          x: 10,
+          y: 15,
+        },
+        {
+          x: 50,
+          y: 35,
+        },
+        {
+          x: 50,
+          y: 5,
+        },
+      ],
       position: 4,
     },
     {
@@ -1481,6 +1727,20 @@ const positions_5x1_receive_6 = {
         x: 20,
         y: 67,
       },
+      animations: [
+        {
+          x: 20,
+          y: 67,
+        },
+        {
+          x: 5,
+          y: 35,
+        },
+        {
+          x: 20,
+          y: 5,
+        },
+      ],
       position: 3,
     },
     {
@@ -1490,6 +1750,24 @@ const positions_5x1_receive_6 = {
         x: 60,
         y: 10,
       },
+      animations: [
+        {
+          x: 60,
+          y: 10,
+        },
+        {
+          x: 65,
+          y: 15,
+        },
+        {
+          x: 65,
+          y: 15,
+        },
+        {
+          x: 80,
+          y: 5,
+        },
+      ],
       position: 2,
     },
   ],

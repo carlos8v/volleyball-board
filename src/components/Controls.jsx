@@ -27,7 +27,7 @@ export function Controls() {
   useEffect(() => {
     const cleanup = bindEvents([
       {
-        key: "space",
+        key: "p",
         cb: () => playAnimations(),
       },
       {
